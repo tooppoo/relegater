@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "inlineSourceMap": true,
+    "alwaysStrict": true,
+    "charset": "utf8",
+    "declaration": true,
+    "declarationDir": "./dts",
+    "lib": ["es6"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "./*.d.ts"
+  ]
+}

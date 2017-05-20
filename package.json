@@ -1,0 +1,27 @@
+{
+  "name": "delegate-js",
+  "version": "0.0.1",
+  "description": "provide function to delegate a property access or method call to other object.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "delegate"
+  ],
+  "author": "topo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/mocha": "^2.2.41",
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-tslint": "^8.0.0",
+    "mocha": "^3.4.1",
+    "ts-loader": "^2.0.3",
+    "tslint": "^5.2.0",
+    "tslint-eslint-rules": "^4.0.0",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.1"
+  }
+}
