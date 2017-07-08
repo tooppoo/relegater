@@ -4,10 +4,11 @@
   "description": "provide function which delegates a property access or method call to other object.",
   "main": "dest/src/delegater.js",
   "scripts": {
-    "test": "gulp test",
+    "test": "gulp test && npm run coveralls",
     "compile": "gulp compile",
     "watch": "gulp watch",
-    "lint": "gulp lint"
+    "lint": "gulp lint",
+    "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
     "delegate"
@@ -19,12 +20,16 @@
     "@types/chai": "^3.5.2",
     "@types/mocha": "^2.2.41",
     "chai": "^3.5.0",
+    "coveralls": "^2.13.1",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-mocha": "^4.3.1",
+    "gulp-istanbul": "^1.1.2",
+    "gulp-mocha": "^3",
     "gulp-tslint": "^8.0.0",
     "gulp-typescript": "^3.2.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.4.1",
+    "mocha-lcov-reporter": "^1.3.0",
     "ts-loader": "^2.0.3",
     "tslint": "^5.2.0",
     "tslint-eslint-rules": "^4.0.0",

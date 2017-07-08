@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const tslint = require('gulp-tslint');
 const mocha = require('gulp-mocha');
+const istanbul = require('gulp-istanbul');
 const del = require('del');
 
 gulp.task('compile', ['clean:src'], () => {
@@ -30,7 +31,7 @@ gulp.task('watch', ['compile'], () => {
 gulp.task('lint', () => {
   return gulp.src(['src/*.ts'])
              .pipe(tslint({
-               formatter: 'stylish'
+               formatter: 'stylish',
              }))
              .pipe(tslint.report());
 });
@@ -43,13 +44,17 @@ gulp.task('compile:test', ['clean:test'], () => {
              .js
              .pipe(gulp.dest('dest/test'));
 });
-gulp.task('test', ['compile', 'compile:test'], () => {
+gulp.task('pre:test', ['compile', 'compile:test'], () => {
+  return gulp.src(['dest/src/*.js'])
+             .pipe(istanbul())
+             .pipe(istanbul.hookRequire());
+});
+gulp.task('test', ['pre:test'], () => {
   return gulp.src(['dest/test/*.js'])
-             .pipe(mocha({
-               ui: 'bdd',
-             }));
+             .pipe(mocha())
+             .pipe(istanbul.writeReports());
 });
 
 gulp.task('clean:src', del.bind(null, ['dest/src', 'dest/dts']));
-gulp.task('clean:test', del.bind(null, 'dest/test'));
+gulp.task('clean:test', del.bind(null, ['dest/test', 'coverage']));
 gulp.task('default', []);
