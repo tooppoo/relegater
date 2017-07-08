@@ -47,3 +47,4 @@ jspm_packages
 
 # test
 dest/test
+.coveralls.yml
