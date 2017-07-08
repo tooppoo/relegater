@@ -4,20 +4,21 @@
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "inlineSourceMap": true,
     "alwaysStrict": true,
     "charset": "utf8",
     "declaration": true,
-    "declarationDir": "./dts",
-    "lib": ["es6"],
+    "lib": [
+      "es6"
+    ],
+    "target": "es5",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
-    "outDir": "./dist"
+    "sourceMap": true,
+    "rootDir": "."
   },
   "include": [
     "src/**/*.ts",
-    "test/**/*.ts",
-    "./*.d.ts"
+    "test/**/*.ts"
   ]
 }

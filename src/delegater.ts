@@ -1,13 +1,26 @@
+export interface Delegater<T> {
+  to: (delegater: Object | Function, ...properties: string[]) => Delegater<T>;
+  self: T;
+}
+export interface $Delegater {
+  to: (delegater: Object | Function, ...properties: string[]) => $Delegater;
+}
+
 const delegating = function(destructive: boolean, delegated: Object, ...properties: string[]) {
-  const acceptable = (this instanceof Object || this instanceof Function);
-  if(acceptable) {
-    throw new TypeError(`[delegate-js] ${this} is not acceptable, only object or function`);
+  const acceptable = (typeof this === 'object' || typeof this === 'function');
+  if(!acceptable) {
+    throw new TypeError(`[delegate-js] ${JSON.stringify(this)} is not acceptable, only object or function`);
   }
   if(!delegated) {
     throw new TypeError(`[delegate-js] delegated object must not be undefined or null`);
   }
 
   properties.forEach(property => {
+    const targetProp = (<any>delegated)[property];
+    if(targetProp === undefined) {
+      return;
+    }
+
     Object.defineProperty(this, property, {
       get: () => (<any>delegated)[property],
       configurable: false
