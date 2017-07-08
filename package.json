@@ -12,6 +12,7 @@
   "keywords": [
     "delegate"
   ],
+  "repository": "https://github.com/topo-js/delegate-js",
   "author": "topo",
   "license": "MIT",
   "devDependencies": {

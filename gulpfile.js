@@ -52,3 +52,4 @@ gulp.task('test', ['compile', 'compile:test'], () => {
 
 gulp.task('clean:src', del.bind(null, ['dest/src', 'dest/dts']));
 gulp.task('clean:test', del.bind(null, 'dest/test'));
+gulp.task('default', ['lint']);
