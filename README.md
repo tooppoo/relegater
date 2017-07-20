@@ -1,6 +1,6 @@
 # relegater
 
-[![Build Status](https://travis-ci.org/topo-js/delegate-js.svg?branch=master)](https://travis-ci.org/topo-js/delegate-js)
+[![Build Status](https://travis-ci.org/topo-js/relegater.svg?branch=master)](https://travis-ci.org/topo-js/relegater)
 [![Coverage Status](https://coveralls.io/repos/github/topo-js/delegate-js/badge.svg?branch=master)](https://coveralls.io/github/topo-js/delegate-js?branch=master)
 
 provide functions in order to delegate a property access or method call for base object to other.
