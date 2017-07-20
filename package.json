@@ -1,8 +1,9 @@
 {
   "name": "relegater",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "provide function which delegates a property access or method call to other object like 'delegate' in Ruby on Rails.",
   "main": "dest/src/delegater.js",
+  "typings": "dest/dts/delegater.d.ts",
   "scripts": {
     "test": "gulp test && npm run coveralls",
     "compile": "gulp compile",
