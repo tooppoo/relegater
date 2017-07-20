@@ -1,6 +1,6 @@
 {
   "name": "relegater",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "provide function which delegates a property access or method call to other object like 'delegate' in Ruby on Rails.",
   "main": "dest/src/delegater.js",
   "scripts": {
@@ -11,9 +11,9 @@
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
-    "delegate"
+    "delegate", "like-rails", "typescript", "javascript"
   ],
-  "repository": "https://github.com/topo-js/delegate-js",
+  "repository": "https://github.com/topo-js/relegater",
   "author": "topo",
   "license": "MIT",
   "devDependencies": {
